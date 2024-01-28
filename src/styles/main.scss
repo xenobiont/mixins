@@ -1,0 +1,27 @@
+@use 'mixins' as m;
+@use 'placeholders' as p;
+@use 'variables' as v;
+
+.parent{
+  @include m.size(200px);
+  @include m.center();
+  background: v.$color--parent;
+
+  &--round {
+    @extend .parent;
+    @include m.is-round();
+  }
+}
+
+.child{
+  @extend .parent;
+  @include m.size(100px);
+  background: v.$color--child;
+
+  &--round {
+    @extend .child;
+    @include m.is-round();
+    @include m.is-scalable();
+  }
+}
+

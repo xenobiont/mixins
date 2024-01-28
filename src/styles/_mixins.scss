@@ -1,0 +1,28 @@
+@mixin size($w, $h: $w){
+  width: $w;
+  height: $h; 
+}
+
+@mixin center($axis: both){
+  display: grid;
+
+  @if($axis == x){
+    justify-content: center;
+  } @else if ($axis == y){
+    align-content: center;
+  } @else {
+    place-content: center;
+  }   
+}
+
+@mixin is-round {
+  border-radius: 50%;
+}
+
+@mixin is-scalable {
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+
